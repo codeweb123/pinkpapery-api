@@ -1,0 +1,45 @@
+.character-types img {
+    height: 50px;
+    width: 50px;
+}
+
+.header img {
+    height: 50px;
+    width: 50px;
+}
+
+.land img {
+    height: 50px;
+    width: 50px;
+
+}
+
+.problem img {
+    height: 1000px;
+    width: 1000px;
+}
+
+/* Progress */
+.progress-container {
+    background: rgb(199, 195, 195);
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 40px 20px;
+    height: 40px;
+    width: 90%;
+  }
+  
+  .progress {
+    background: #eb1b1b;
+    border-radius: 5px;
+    height: 100%;
+    width: 0%;
+    transition: width 0.1s linear;
+  }
+  
+  .duration-wrapper {
+    position: relative;
+    top: -25px;
+    display: flex;
+    justify-content: space-between;
+  }

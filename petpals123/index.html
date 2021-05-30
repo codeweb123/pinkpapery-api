@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="game-container">
+    <div class="game-container" >
         <!-- header -->
-        <div class="header">
-            <h1>Login</h1>
+        <div class="header" hidden>
+            <img src="img/cat.jpg">
+            <img src="img/dog.jpg">
+            <img src="img/owl.jpg">
+            <h1>Welcome to PetPals123</h1>
             <!-- form -->
             <form id="form">
                 <!-- name -->
@@ -24,13 +27,41 @@
                     <label for="password">password</label>
                     <input type="password" id="password" placeholder="password">
                 </div>
+                <!-- button -->
+                <button type="submit">Login</button>
+                </form>
             </form>
         </div>
-        <!--SplashPage-->
-        <div class="card" id="splash-page">
-            <form id="login-form">
-                <div class=""
-            </form>
+        <!--Choose a character-->
+        <div class="character" id="character-page" hidden>
+            <div class="character-types">
+                <img src="img/cat.jpg">
+                <img src="img/dog.jpg">
+                <img src="img/owl.jpg">
+            </div>
+            <button type="submit">Add Character</button>
+        </div>
+        <div class="land" id="land-type" hidden>
+            <h1>Choose a Land</h1>
+            <div class="land-types">
+                <img src="img/mountain.jpg">
+                <img src="img/forest.jpg">
+                <img src="img/ocean.jpg">
+            </div>
+            <button type="submit">Go!</button>
+        </div>
+        <div class="problem" id="problem-page">
+            <!-- Progress bar-->
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+            <div class="duration-wrapper">
+                <span id="current-time">0:00</span>
+                <span id="duration">2:06</span>
+            </div>
+            <div class="charact"></div>
+        </div>
+            <img src="img/mountain.jpg">
+
         </div>
     </div>
     
