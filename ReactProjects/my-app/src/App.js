@@ -2,7 +2,6 @@ import { Component } from "react";
 import "./App.css";
 import CardList from "./components/card-list/card-list.component";
 import SearchBox from "./components/search-box/search-box.component";
-
 // || Functional Components - acts as JS function ||
 // || What is returned, is put on UI.
 
@@ -11,7 +10,6 @@ import SearchBox from "./components/search-box/search-box.component";
 //      <h1 className="app"> hello </h1>
 //   )
 // }
-
 class App extends Component {
   constructor() {
     super();
