@@ -1,6 +1,10 @@
 const App = () => {
   return React.createElement("div", {}, [
-    React.createElement("h1", { class: "title", key: 3 }, "React IS rendered"),
+    React.createElement(
+      "h1",
+      { className: "title", key: 3 },
+      "React IS rendered"
+    ),
     React.createElement(
       Person,
       { name: "Jiyon", occupation: "teacher", key: 4 },
@@ -26,8 +30,8 @@ const App = () => {
 
 const Person = (props) => {
   return React.createElement("div", {}, [
-    React.createElement("h1", {}, props.name),
-    React.createElement("p", {}, props.occupation),
+    React.createElement("h1", { key: 11 }, props.name),
+    React.createElement("p", { key: 10 }, props.occupation),
   ]);
 };
 
