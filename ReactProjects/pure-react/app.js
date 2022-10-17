@@ -1,12 +1,24 @@
 const App = () => {
   return React.createElement("div", {}, [
-    React.createElement("h1", { class: "title" }, "React IS rendered"),
-    React.createElement(Person, { name: "Jiyon", occupation: "teacher" }, null),
-    React.createElement(Person, { name: "Eric", occupation: "teacher" }, null),
-    React.createElement(Person, { name: "Madi", occupation: "teacher" }, null),
+    React.createElement("h1", { class: "title", key: 3 }, "React IS rendered"),
     React.createElement(
       Person,
-      { name: "Claire", occupation: "teacher" },
+      { name: "Jiyon", occupation: "teacher", key: 4 },
+      null
+    ),
+    React.createElement(
+      Person,
+      { name: "Eric", occupation: "teacher", key: 5 },
+      null
+    ),
+    React.createElement(
+      Person,
+      { name: "Madi", occupation: "teacher", key: 6 },
+      null
+    ),
+    React.createElement(
+      Person,
+      { name: "Claire", occupation: "teacher", key: 8 },
       null
     ),
   ]);
