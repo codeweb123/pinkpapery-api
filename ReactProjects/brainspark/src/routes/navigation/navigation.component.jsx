@@ -1,11 +1,15 @@
 import { Fragment } from 'react'
 import { Outlet, Link } from "react-router-dom";
 
+import { ReactComponent as Logo } from '../../assets/pencil.png'
+
 const Navigation = () => {
     return (
       <Fragment>
         <div className="navigation">
-          <div>Logo</div>
+          <Link className="logo-container" to="/">
+            <Logo />
+            </Link>
           <div className="nav-links-container">
             <Link className="nav-link" to="/shop">
             Shop
