@@ -9,7 +9,7 @@ const Home = () => {
         "https://img.freepik.com/free-vector/stack-books-graphic-illustration_53876-8852.jpg?w=826&t=st=1666122616~exp=1666123216~hmac=02821114f64282fd33ba6954bf65950505156a45cb273ef7170ec32bfa7402f5",
     },
     {
-      id: 2,
+      id: 2, 
       title: "Math",
       imageUrl:
         "https://img.freepik.com/free-vector/african-girl-with-chalkboard-classroom-character_24877-59351.jpg?w=740&t=st=1666122767~exp=1666123367~hmac=a9a827ee28d4ed4bfabc4b54739f8e3dc03dbe2aacf66f0f88698b0179141946",
