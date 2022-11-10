@@ -31,7 +31,6 @@ export const CartContext = createContext({
     removeItemFromCart: () => {},
     cartCount: 0,
     clearItemFromCart: () => {},
-    cartCount: 0,
     total: 0
 });
 
