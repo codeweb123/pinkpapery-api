@@ -3,7 +3,7 @@ import { Outlet, Link } from "react-router-dom";
 import CartIcon from '../../components/cart-icon/cart-icon.component'
 import CartDropdown from '../../components/cart-dropdown/cart-dropdown.component'
 
-import { ReactComponent as CrownLogo } from '../../assets/crown.svg'
+import logo from '../../assets/brainspark.png'
 import { UserContext } from '../../contexts/user.context';
 import { CartContext } from '../../contexts/cart.context'
 import './navigation.styles.scss'
@@ -17,9 +17,11 @@ const Navigation = () => {
     return (
       <Fragment>
         <div className="navigation">
-          <Link className="logo-container" to="/">
-            <CrownLogo className='logo'/>
+          <div className="logo-container" to="/">
+            <Link to="/">
+              <img src={logo} alt="Logo" />
             </Link>
+          </div>
           <div className="nav-links-container">
             <Link className="nav-link" to="/shop">
             Shop
@@ -35,7 +37,7 @@ const Navigation = () => {
             <CartIcon />
           </div>
           {isCartOpen && <CartDropdown />}
-        </div>
+      </div>
         <Outlet />
       </Fragment>
     );
