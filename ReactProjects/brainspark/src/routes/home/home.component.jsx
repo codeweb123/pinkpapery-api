@@ -30,13 +30,13 @@ const Home = () => {
       id: 5,
       title: "writing",
       imageUrl:
-        "https://i.imgur.com/8UBakyP.jpg",
+        "https://i.imgur.com/uNKAFSa.jpg",
     },
     {
       id: 6,
       title: "holidays",
       imageUrl:
-        "https://i.imgur.com/l5Na660.jpg",
+        "https://i.imgur.com/zWaGUb9.jpg",
     },
     {
       id: 7,
@@ -45,13 +45,13 @@ const Home = () => {
         "https://i.imgur.com/UrZnC2p.jpg",
     },
     {
-      id: 7,
+      id: 8,
       title: "worldlanguages",
       imageUrl:
         "https://i.imgur.com/EJKmR2R.jpg",
     },
     {
-      id: 8,
+      id: 9,
       title: "art",
       imageUrl:
         "https://i.imgur.com/gObdULX.jpg",
