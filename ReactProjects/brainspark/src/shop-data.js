@@ -170,7 +170,7 @@ const SHOP_DATA = [
       {
         id: 26,
         name: "Compare urban, suburban, and rural areas",
-        imageUrl: "https://i.imgur.com/Bp4LdIP.jpg",
+        imageUrl: "https://i.imgur.com/AW6LxGJ.jpg",
         price: 80,
       },
       {
