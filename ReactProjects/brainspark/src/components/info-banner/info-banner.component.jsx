@@ -4,14 +4,18 @@ import Button from '../button/button.component'
 
 const InfoBanner = () => {
 
+
     return (
         <Fragment>
             <div className= 'info-banner'>
-                <div className= 'info-text-container'>
-                    <h1>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Suscipit adipiscing bibendum est ultricies. Nunc lobortis mattis aliquam faucibus purus. Vivamus arcu felis bibendum ut tristique et egestas quis ipsum. Et molestie ac feugiat sed lectus vestibulum mattis ullamcorper velit. Mattis ali</h1>
-                </div>
+                    <h1>Teacher tested. <br></br>Optimized for student success.</h1>
+                    <span>
+                    <img src="https://i.imgur.com/lxC88tN.jpg" alt="img"></img>
+                    </span>
+                    
+                    <h3>BrainSpark is a teacher created platform that provides easy to use resources for teachers and parents to support student learning. Founded in 2023, BrainSpark is trusted by educators and parents as a resource for comprehensive and individualized activities for K-5 learners.</h3>
+                <Button>Learn More</Button>
             </div>
-            <Button>Learn More</Button> 
         </Fragment>
     )
 }
