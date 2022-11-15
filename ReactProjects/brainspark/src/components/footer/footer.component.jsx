@@ -1,21 +1,26 @@
-import './footer.styles.scss'
+import { FaInstagramSquare } from 'react-icons/fa';
+import { FaFacebook } from 'react-icons/fa';
+import './footer.styles.scss';
 
 const Footer = () => {
     return (
             <div className= 'footer'>
                 <h1>Brainspark.<br></br></h1>
-                <h2>Teacher tested.<br></br>Optimized for student success.</h2>
-                    <div className= 'social-media'>
-                        <span>
-                        <img src="https://i.imgur.com/SPUhR11.png" alt="social" ></img>
-                        </span>
-                        <span>
-                        <img src="https://i.imgur.com/5F7DlZJ.png" alt="social" ></img>
-                        </span>
-                        <span>
-                        <img src="https://i.imgur.com/4IcSlPa.png" alt="social" ></img>
-                        </span>
-                    </div>
+                <h2>Teacher tested.<br></br>Optimized for student success.</h2> 
+                <h2>&copy; 2023 Brainspark. All rights reserved.</h2>
+                <div className= 'social'>
+                    <h3>Contact Us:</h3>
+                    <span>
+                        <a href="https://www.instagram.com/brainsparkco/" target="_blank">
+                        <FaInstagramSquare/>
+                        </a>
+                    </span>
+                    <span>
+                        <a href="https://www.facebook.com/profile.php?id=100088115250763" target="_blank">
+                        <FaFacebook />
+                        </a>
+                    </span>
+                </div> 
             </div>
     )
 }
