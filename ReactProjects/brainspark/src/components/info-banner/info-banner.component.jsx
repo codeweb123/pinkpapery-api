@@ -4,7 +4,6 @@ import Button from '../button/button.component'
 
 const InfoBanner = () => {
 
-
     return (
         <Fragment>
             <div className= 'info-banner'>
@@ -12,8 +11,9 @@ const InfoBanner = () => {
                     <span>
                     <img src="https://i.imgur.com/lxC88tN.jpg" alt="img"></img>
                     </span>
-                    
-                    <h3>BrainSpark is a teacher created platform that provides easy to use resources for teachers and parents to support student learning. Founded in 2023, BrainSpark is trusted by educators and parents as a resource for comprehensive and individualized activities for K-5 learners.</h3>
+                    <span>
+                    <h3>BrainSpark is a teacher created platform that provides easy to use resources for teachers<br></br> and parents to support student learning. Founded in 2023, Brainspark creates confidence by <br></br>providing solutions for personalized learning and meeting the needs of each unique learner. </h3>
+                    </span>
                 <Button>Learn More</Button>
             </div>
         </Fragment>
