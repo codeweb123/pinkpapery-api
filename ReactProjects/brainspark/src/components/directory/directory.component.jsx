@@ -14,9 +14,6 @@ const Directory = ({categories}) => {
             )
         }
         </div>
-        <div className="info-banner">
-            <InfoBanner />
-            </div>
         </div>
     )
 }
