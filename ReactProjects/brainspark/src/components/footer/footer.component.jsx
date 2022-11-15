@@ -11,12 +11,12 @@ const Footer = () => {
                 <div className= 'social'>
                     <h3>Contact Us:</h3>
                     <span>
-                        <a href="https://www.instagram.com/brainsparkco/" target="_blank">
+                        <a href="https://www.instagram.com/brainsparkco/" target="_blank" rel="noreferrer" >
                         <FaInstagramSquare/>
                         </a>
                     </span>
                     <span>
-                        <a href="https://www.facebook.com/profile.php?id=100088115250763" target="_blank">
+                        <a href="https://www.facebook.com/profile.php?id=100088115250763" target="_blank" rel="noreferrer" >
                         <FaFacebook />
                         </a>
                     </span>
