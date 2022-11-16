@@ -1,6 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react'
 import { createUserDocumentFromAuth, onAuthStateChangedListener } from '../utils/firebase/firebase.utils'
-import { createAction } from '../utils/reducer.utilis';
+import { createAction } from '../utils/reducer/reducer.utilis';
 //context-actual value you want to access
 export const UserContext = createContext({ 
     setCurrentUser: () => null,
