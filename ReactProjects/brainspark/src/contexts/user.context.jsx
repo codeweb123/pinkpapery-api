@@ -1,7 +1,6 @@
 import { createContext, useEffect, useReducer } from 'react'
 import { createUserDocumentFromAuth, onAuthStateChangedListener } from '../utils/firebase/firebase.utils'
 import { createAction } from '../utils/reducer.utilis';
-
 //context-actual value you want to access
 export const UserContext = createContext({ 
     setCurrentUser: () => null,
@@ -23,8 +22,7 @@ const userReducer = (state, action) => {
          }
         default: 
          throw new Error(`Unhandled type ${type} in userReducer `)
-    }
-    
+    }  
 }
 
 const INITIAL_STATE = {
