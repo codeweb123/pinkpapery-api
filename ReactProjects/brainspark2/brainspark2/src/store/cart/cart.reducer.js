@@ -1,3 +1,4 @@
+import { CATEGORIES_ACTION_TYPES } from "../categories/category.types";
 import { CART_ACTION_TYPES } from "./cart.types";
 
 export const CART_INITIAL_STATE = {
@@ -13,6 +14,11 @@ export const cartReducer = (state = CART_INITIAL_STATE, action = {}) => {
       return {
         ...state,
         cartItems: payload,
+      };
+    case CATEGORIES_ACTION_TYPES.SET_IS_CART_OPEN:
+      return {
+        ...state,
+        isCartOpen: payload,
       };
     default:
       return state;
