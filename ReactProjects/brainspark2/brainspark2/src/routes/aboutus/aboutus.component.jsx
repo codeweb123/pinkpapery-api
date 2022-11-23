@@ -11,8 +11,7 @@ const Aboutus = () => {
             <img src="https://i.imgur.com/4d7sYBZ.jpg " alt="aboutuspic"></img>
         </div>
         <Footer />
-        </>
-        
+        </> 
     )
 }
 
