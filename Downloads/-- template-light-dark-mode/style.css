@@ -101,14 +101,14 @@ a:focus {
 }
 
 img {
-  height: 300px;
-  width: 300px;
+  height: 100px;
+  width: 100px;
 }
 
 /* Projects Section */
 .buttons {
-  margin-top: 15px;
-  margin-bottom: 50px;
+  margin-top: 20px;
+  margin-bottom: 60px;
 }
 
 button {
