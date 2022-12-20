@@ -2,18 +2,23 @@
 
 console.log("App.js is running");
 
+var app = {
+  title: "Choice App!",
+  subtitle: "This is some info!"
+};
+
 var template = React.createElement(
   "div",
   null,
   React.createElement(
     "h1",
     null,
-    "Choice App"
+    app.title
   ),
   React.createElement(
     "p",
     null,
-    "This is some info."
+    app.subtitle
   ),
   React.createElement(
     "ol",
@@ -33,13 +38,16 @@ var template = React.createElement(
 
 var user = {
   name: "Jiyon",
-  age: 42,
-  location: "Sugar Land, TX"
+  age: 42
 };
 
-var userName = "Jiyon";
-var userAge = 42;
-var userLocation = "Sugar Land, TX";
+function getLocation(location) {
+  if (location) {
+    return location;
+  } else {
+    return "Unknown";
+  }
+}
 
 var templateTwo = React.createElement(
   "div",
@@ -59,7 +67,7 @@ var templateTwo = React.createElement(
     "p",
     null,
     "Location: ",
-    user.location
+    getLocation(user.location)
   )
 );
 
