@@ -1,6 +1,6 @@
 "use strict";
 
-console.log("App.js is running");
+console.log("App.js is running!!!!!");
 
 var app = {
   title: "Choice App!",
@@ -38,14 +38,18 @@ var template = React.createElement(
 
 var user = {
   name: "Jiyon",
-  age: 42
+  age: "42",
+  location: "Sugar Land"
 };
 
 function getLocation(location) {
   if (location) {
-    return location;
-  } else {
-    return "Unknown";
+    return React.createElement(
+      "p",
+      null,
+      " Location: ",
+      location
+    );
   }
 }
 
@@ -55,22 +59,18 @@ var templateTwo = React.createElement(
   React.createElement(
     "h1",
     null,
-    user.name
+    user.name ? user.name : "anonymous"
   ),
-  React.createElement(
+  user.age && user.age >= 18 && React.createElement(
     "p",
     null,
     "Age: ",
-    user.age
+    user.age,
+    " "
   ),
-  React.createElement(
-    "p",
-    null,
-    "Location: ",
-    getLocation(user.location)
-  )
+  getLocation(user.location)
 );
 
 var appRoot = document.getElementById("app");
 
-ReactDOM.render(templateTwo, appRoot);
+ReactDOM.render(template, appRoot);
