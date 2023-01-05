@@ -1,20 +1,42 @@
 console.log("App.js is running!");
 
+var app = {
+  title: "Hello",
+  subtitle: "There",
+};
+
 var user = {
   name: "Andrew",
   age: 26,
-  location: "Philly",
+  location: "New York",
 };
 
 var userName = "Maddie";
 var userAge = 27;
 var userLocation = "Phily";
 
+var template = (
+  <div>
+    <h1>Choice App</h1>
+    <p>This is some info</p>
+    <ol>
+      <li>{app.title}</li>
+      <li>{app.subtitle}</li>
+    </ol>
+  </div>
+);
+
+function getLocation(location) {
+  if (location) {
+    return <p>Location: {location} </p>;
+  }
+}
+
 var templateTwo = (
   <div>
-    <h1>{user.name}</h1>
+    <h1>{user.name ? user.name : "Anonyous"}</h1>
     <p>Age: {user.age}</p>
-    <p>Location: {user.location} </p>
+    {getLocation(user.location)}
   </div>
 );
 
