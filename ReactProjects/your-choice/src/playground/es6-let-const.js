@@ -10,3 +10,12 @@ console.log("nameLet", nameLet);
 const nameConst = "Frank";
 nameConst = "Dude";
 console.log("nameConst", nameConst);
+
+var fullName = "Jiyon Trammell";
+
+if (fullName) {
+  var firstName = fullName.split(" ")[0];
+  console.log(firstName);
+}
+
+console.log(firstName);
