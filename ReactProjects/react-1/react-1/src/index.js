@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 
+const title = "Spare";
+const author = "Prince Harry The Duke of Sussex";
+const img = "./images/book-1.jpg";
+
 const BookList = () => {
   return (
     <section className="booklist">
@@ -16,21 +20,12 @@ const BookList = () => {
 const Book = () => {
   return (
     <article className="book">
-      <Image />
-      <Title />
-      <Author />
+      <img src={img} alt={title} />
+      <h2>{title}</h2>
+      <h4>{author}</h4>
     </article>
   );
 };
-
-const Image = () => (
-  <img
-    src="https://images-na.ssl-images-amazon.com/images/I/91Szm8FpdfL._AC_UL600_SR600,400_.jpg"
-    alt="Spare"
-  />
-);
-const Title = () => <h2>Spare</h2>;
-const Author = () => <h4>Prince Harry The Duke of Sussex </h4>;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 

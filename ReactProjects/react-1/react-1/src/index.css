@@ -6,14 +6,14 @@
 
 body {
     font-family: sans-serif;
-    background: #f1f5f8;
+    background: #6a8ea9;
     color: #222;
 }
 
 .booklist {
     width: 90%;
     max-width: 1170px;
-    margin: 5rem auto;
+    margin: 50px auto;
     display: grid;
     gap: 2rem;
 }
@@ -24,7 +24,26 @@ body {
     }
 }
 
+.book {
+    background: #fff;
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
 .book img{
     width: 100%;
     object-fit: cover;
+}
+
+.book h2 {
+    margin-top: 10px;
+    font-size: 10px;
+}
+
+.book h4 {
+    color: #617d98;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    letter-spacing: 2px;
 }
