@@ -25,12 +25,16 @@ const books = [
 //place key - usually id in Main Return where you render out the component. Usually the "mainList".
 
 const BookList = () => {
+  const getBook = (id) => {
+    const book = books.find((book) => book.id === id);
+    console.log(book);
+  };
   return (
     <section className="booklist">
       <EventExamples />
 
       {books.map((book) => {
-        return <Book {...book} key={book.id} />;
+        return <Book {...book} key={book.id} getBook={getBook} />;
       })}
     </section>
   );
@@ -78,15 +82,15 @@ const EventExamples = () => {
   );
 };
 
-const Book = ({ img, title, author }) => {
-  const displayTitle = () => {
-    console.log(title);
+const Book = ({ img, title, author, getBook, id }) => {
+  const getSingleBook = () => {
+    getBook(id);
   };
   return (
     <article className="book">
       <img src={img} alt={title} />
       <h2>{title}</h2>
-      <button onClick={displayTitle}>display title</button>
+      <button onClick={getSingleBook}>click me</button>
       <h4>{author}</h4>
     </article>
   );
