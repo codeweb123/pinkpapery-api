@@ -1,14 +1,22 @@
 const App = () => {
+  const pets = [
+    {
+      id: 1,
+      name: "Bear",
+      img:
+    }
+  ];
+
   return (
     <div className="login-container">
-      <div className="pet-container">
         <div className="pets">
-          <img></img>
-          <img></img>
-          <img></img>
-          <img></img>
+          {pets.map(({name})=> (
+            <div className="pet-container">
+            {/* <img />*/}
+            <h2>{title}</h2>
+            </div>)
+          )}
         </div>
-      </div>
       <div className="login-body-container">
         <h2>Petpal Land</h2>
       </div>
