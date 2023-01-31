@@ -1,22 +1,41 @@
+import "./pets.styles.scss";
+
 const App = () => {
   const pets = [
     {
       id: 1,
       name: "Bear",
-      img:
-    }
+    },
+    {
+      id: 2,
+      name: "Bird",
+    },
+    {
+      id: 3,
+      name: "Cat",
+    },
+    {
+      id: 4,
+      name: "Rabbit",
+    },
+    {
+      id: 5,
+      name: "Dog",
+    },
   ];
 
   return (
     <div className="login-container">
-        <div className="pets">
-          {pets.map(({name})=> (
-            <div className="pet-container">
-            {/* <img />*/}
-            <h2>{title}</h2>
-            </div>)
-          )}
-        </div>
+      <div className="pets-choice-container">
+        {pets.map(({ name, id }) => (
+          <div key={id} className="pet-container">
+            <div className="pet-body-container">
+              {/* <img />*/}
+              <h2>{name}</h2>
+            </div>
+          </div>
+        ))}
+      </div>
       <div className="login-body-container">
         <h2>Petpal Land</h2>
       </div>
@@ -26,7 +45,7 @@ const App = () => {
           <input></input>
         </div>
       </div>
-      <button></button>
+      <button className="btn"></button>
     </div>
   );
 };
