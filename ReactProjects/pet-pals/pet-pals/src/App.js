@@ -1,3 +1,5 @@
+import PetItem from "./components/pet-item/pet-item.component";
+
 import "./pets.styles.scss";
 
 const App = () => {
@@ -33,17 +35,8 @@ const App = () => {
     <div className="login-container">
       <h2>Petpal Land</h2>
       <div className="pets-choice-container">
-        {pets.map(({ name, id, imageUrl }) => (
-          <div key={id} className="pet-container">
-            <div
-              className="background-image"
-              style={{ backgroundImage: `url(${imageUrl})` }}
-            >
-              <div className="pet-body-container">
-                <h2>{name}</h2>
-              </div>
-            </div>
-          </div>
+        {pets.map((pet) => (
+          <PetItem key={pet.id} pet={pet} />
         ))}
       </div>
     </div>
