@@ -27,21 +27,18 @@ const App = () => {
 
   return (
     <div className="login-container">
+      <h2>Petpal Land</h2>
       <div className="pets-choice-container">
-        {pets.map(({ name, id, imageUrl }) => (
-          
+        {pets.map(({ name }) => (
+          <div className="pet-container">
+            <div className="background-image">
+              <div className="pet-body-container">
+                <h2>{name}</h2>
+              </div>
+            </div>
+          </div>
         ))}
       </div>
-      <div className="login-body-container">
-        <h2>Petpal Land</h2>
-      </div>
-      <div className="input-container">
-        <div>
-          <input></input>
-          <input></input>
-        </div>
-      </div>
-      <button className="btn"></button>
     </div>
   );
 };
