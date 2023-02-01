@@ -5,6 +5,7 @@ const App = () => {
     {
       id: 1,
       name: "Bear",
+      imageUrl: "https://i.imgur.com/XX6jpgP.png",
     },
     {
       id: 2,
@@ -27,13 +28,8 @@ const App = () => {
   return (
     <div className="login-container">
       <div className="pets-choice-container">
-        {pets.map(({ name, id }) => (
-          <div key={id} className="pet-container">
-            <div className="pet-body-container">
-              {/* <img />*/}
-              <h2>{name}</h2>
-            </div>
-          </div>
+        {pets.map(({ name, id, imageUrl }) => (
+          
         ))}
       </div>
       <div className="login-body-container">
