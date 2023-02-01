@@ -1,5 +1,3 @@
-import PetItem from "./components/pet-item/pet-item.component";
-
 import "./pets.styles.scss";
 
 const App = () => {
@@ -34,11 +32,6 @@ const App = () => {
   return (
     <div className="login-container">
       <h2>Petpal Land</h2>
-      <div className="pets-choice-container">
-        {pets.map((pet) => (
-          <PetItem key={pet.id} pet={pet} />
-        ))}
-      </div>
     </div>
   );
 };
