@@ -1,5 +1,7 @@
 import PetItem from "../pet-item/pet-item.component";
 
+import "./log-in.styles.scss";
+
 const Login = ({ pets }) => {
   return (
     <div className="login-container">
