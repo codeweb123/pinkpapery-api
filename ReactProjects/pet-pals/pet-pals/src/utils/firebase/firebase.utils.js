@@ -6,6 +6,8 @@ import {
   GoogleAuthProvider,
 } from "firebase/auth";
 
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
+
 const firebaseConfig = {
   apiKey: "AIzaSyA8wc8h_DRYqx5ScoMv8qgysqEMvtX7qW8",
   authDomain: "petpals-db.firebaseapp.com",
@@ -25,3 +27,9 @@ provider.setCustomParameters({
 
 export const auth = getAuth();
 export const signInWithGooglePopup = () => signInWithPopup(auth, provider);
+
+export const db = getFirestore();
+
+export const createUserDocumentFomAuth = async (userAuth) => {
+    const userDocRef = 
+}
