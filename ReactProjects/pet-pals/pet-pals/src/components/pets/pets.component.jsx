@@ -1,7 +1,6 @@
 import Login from "../../components/log-in/log-in.component";
-import SignIn from "../sign-in/sign-in.component";
 
-const Home = () => {
+const Pets = () => {
   const pets = [
     {
       id: 1,
@@ -34,9 +33,8 @@ const Home = () => {
     <div>
       <h2>Petpal Land</h2>
       <Login pets={pets} />
-      <SignIn />
     </div>
   );
 };
 
-export default Home;
+export default Pets;

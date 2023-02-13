@@ -16,7 +16,7 @@ const Navigation = () => {
           <img src="logo.png" alt="logo" />
         </Link>
         <div className="nav-links-container">
-          <Link className="nav-link" to="/sign-in">
+          <Link className="nav-link" to="/">
             SignIn
           </Link>
           <Link className="nav-link" to="/land">
