@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { PetsProvider } from "./contexts/pets.context";
+import { LandsProvider } from "./contexts/lands.context";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "./index.scss";
@@ -12,9 +13,11 @@ root.render(
   <BrowserRouter>
     <React.StrictMode>
       <UserProvider>
-        <PetsProvider>
-          <App />
-        </PetsProvider>
+        <LandsProvider>
+          <PetsProvider>
+            <App />
+          </PetsProvider>
+        </LandsProvider>
       </UserProvider>
     </React.StrictMode>
   </BrowserRouter>
