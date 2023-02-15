@@ -1,17 +1,10 @@
 import { createContext, useState, useEffect } from "react";
+import PETS from "../pet-data.json";
 
-import {
-  createUserDocumentFromAuth,
-  onAuthStateChangedListener,
-} from "../utils/firebase/firebase.utils";
+export const PetContext = createContext({});
 
-export const UserContext = createContext({
-  currentUser: null,
-  setCurrentUser: () => null,
-});
-
-export const UserProvider = ({ children }) => {
-  const [currentUser, setCurrentUser] = useState(null);
+export const PetsProvider = ({ children }) => {
+  const [pets, setPet] = useState(PETS);
   const value = { currentUser, setCurrentUser };
 
   useEffect(() => {

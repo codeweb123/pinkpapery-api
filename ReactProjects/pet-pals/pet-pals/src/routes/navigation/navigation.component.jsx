@@ -1,31 +1,35 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import { UserContext } from "../../contexts/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import "./navigation.styles.scss";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+
   return (
     <Fragment>
       <div className="navigation">
-        <Link
-          className="logo-container"
-          to="/"
-          target="_blank"
-          rel="noreferrer"
-        >
+        <Link className="logo-container" to="/">
           <img src="logo.png" alt="logo" />
         </Link>
         <div className="nav-links-container">
-          <Link className="nav-link" to="/">
-            SignIn
+          {currentUser ? (
+            <span className="nav-link" onClick={signOutUser}>
+              {" "}
+              Sign Out
+            </span>
+          ) : (
+            <Link className="nav-link" to="/">
+              Sign In
+            </Link>
+          )}
+          <Link className="nav-link" to="/pet">
+            Pick_a_Pet
           </Link>
           <Link className="nav-link" to="/land">
             Pick_a_Land
-          </Link>
-          <Link className="nav-link" to="/pet">
-            Pick_a_Pet
           </Link>
         </div>
       </div>

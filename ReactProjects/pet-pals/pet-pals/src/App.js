@@ -3,10 +3,7 @@ import Navigation from "./routes/navigation/navigation.component";
 import Pets from "./components/pets/pets.component";
 import Authentication from "./routes/authentication/authentication.component";
 import { Fragment } from "react";
-
-const Shop = () => {
-  return <h1>I am the shop page</h1>;
-};
+import PickAPet from "./routes/pick-a-pet/pick-a-pet.component";
 
 const App = () => {
   return (
@@ -21,7 +18,7 @@ const App = () => {
             </>
           }
         />
-        <Route path="shop" element={<Shop />} />
+        <Route path="pet" element={<PickAPet />} />
       </Route>
     </Routes>
   );
