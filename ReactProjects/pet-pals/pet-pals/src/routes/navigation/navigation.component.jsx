@@ -1,5 +1,8 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import XIcon from "../../components/x-icon/x-icon.component";
+import InfoBox from "../../components/info-box/info-box.component";
+
 import { UserContext } from "../../contexts/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
@@ -31,7 +34,9 @@ const Navigation = () => {
           <Link className="nav-link" to="/land">
             Pick_a_Land
           </Link>
+          <XIcon />
         </div>
+        <InfoBox />
       </div>
       <Outlet />
     </Fragment>
