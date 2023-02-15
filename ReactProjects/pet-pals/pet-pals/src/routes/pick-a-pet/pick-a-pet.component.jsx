@@ -1,9 +1,13 @@
-import PET_DATA from "../../pet-data.json";
+import { useContext } from "react";
+
+import { PetsContext } from "../../contexts/pets.context";
 
 const PickAPet = () => {
+  const { pets } = useContext(PetsContext);
+
   return (
     <div>
-      {PET_DATA.map(({ id, name }) => (
+      {pets.map(({ id, name }) => (
         <div key={id}>
           <h1>{name}</h1>
         </div>

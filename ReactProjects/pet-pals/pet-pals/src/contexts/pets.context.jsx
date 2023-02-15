@@ -1,21 +1,13 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 import PETS from "../pet-data.json";
 
-export const PetContext = createContext({});
+export const PetsContext = createContext({
+  pets: [],
+});
 
 export const PetsProvider = ({ children }) => {
-  const [pets, setPet] = useState(PETS);
-  const value = { currentUser, setCurrentUser };
+  const [pets, setPets] = useState(PETS);
+  const value = { pets };
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChangedListener((user) => {
-      if (user) {
-        createUserDocumentFromAuth(user);
-      }
-      setCurrentUser(user);
-    });
-    return unsubscribe;
-  }, []);
-
-  return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
+  return <PetsContext.Provider value={value}>{children}</PetsContext.Provider>;
 };
