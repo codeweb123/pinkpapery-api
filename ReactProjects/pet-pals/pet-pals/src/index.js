@@ -4,6 +4,7 @@ import App from "./App";
 import { UserProvider } from "./contexts/user.context";
 import { PetsProvider } from "./contexts/pets.context";
 import { LandsProvider } from "./contexts/lands.context";
+import { InfoProvider } from "./contexts/info.context";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "./index.scss";
@@ -15,7 +16,9 @@ root.render(
       <UserProvider>
         <LandsProvider>
           <PetsProvider>
-            <App />
+            <InfoProvider>
+              <App />
+            </InfoProvider>
           </PetsProvider>
         </LandsProvider>
       </UserProvider>

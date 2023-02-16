@@ -4,12 +4,15 @@ import XIcon from "../../components/x-icon/x-icon.component";
 import InfoBox from "../../components/info-box/info-box.component";
 
 import { UserContext } from "../../contexts/user.context";
+import { InfoContext } from "../../contexts/info.context";
+
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 
 import "./navigation.styles.scss";
 
 const Navigation = () => {
   const { currentUser } = useContext(UserContext);
+  const { isInfoBoxOpen } = useContext(InfoContext);
 
   return (
     <Fragment>
@@ -36,7 +39,7 @@ const Navigation = () => {
           </Link>
           <XIcon />
         </div>
-        <InfoBox />
+        {isInfoBoxOpen && <InfoBox />}
       </div>
       <Outlet />
     </Fragment>
