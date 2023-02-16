@@ -1,6 +1,6 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
-import XIcon from "../../components/x-icon/x-icon.component";
+import XIcon from "../../components/info-icon/info-icon.component";
 import InfoBox from "../../components/info-box/info-box.component";
 
 import { UserContext } from "../../contexts/user.context";
