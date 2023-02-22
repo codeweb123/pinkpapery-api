@@ -9,13 +9,17 @@ const InfoBox = () => {
   const { infoBoxItems } = useContext(InfoBoxContext);
   const navigate = useNavigate();
 
+  const goToGameHandler = () => {
+    navigate("/game");
+  };
+
   return (
     <div className="info-box-container">
       <div className="info-items" />
       {infoBoxItems.map((item) => (
         <InfoBoxItem key={item.id} infoBoxItem={item} />
       ))}
-      <Button>Let's get Learning!</Button>
+      <Button onClick={goToGameHandler}>Let's get Learning!</Button>
     </div>
   );
 };
