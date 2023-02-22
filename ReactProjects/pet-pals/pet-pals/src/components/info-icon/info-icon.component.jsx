@@ -1,11 +1,11 @@
 import { useContext } from "react";
-import { InfoContext } from "../../contexts/info.context";
+import { InfoBoxContext } from "../../contexts/info.context";
 import "./info-icon.styles.scss";
 
 import infoicon from "../../assets/info-icon.png";
 
 const InfoIcon = () => {
-  const { isInfoBoxOpen, setIsInfoBoxOpen } = useContext(InfoContext);
+  const { isInfoBoxOpen, setIsInfoBoxOpen } = useContext(InfoBoxContext);
 
   const toggleIsInfoBoxOpen = () => setIsInfoBoxOpen(!isInfoBoxOpen);
 

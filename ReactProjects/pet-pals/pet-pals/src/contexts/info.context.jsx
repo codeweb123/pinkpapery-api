@@ -1,12 +1,42 @@
 import { createContext, useState } from "react";
 
-export const InfoContext = createContext({
+const addInfoBoxItem = (infoBoxItems, itemToAdd) => {
+  const existingInfoBoxItem = infoBoxItems.find(
+    (infoBoxItem) => infoBoxItem.id === itemToAdd.id
+  );
+
+  if (existingInfoBoxItem) {
+    return [...infoBoxItems];
+  }
+
+  if (!existingInfoBoxItem) {
+    return [{ ...itemToAdd }];
+  }
+};
+
+export const InfoBoxContext = createContext({
   isInfoBoxOpen: false,
   setIsInfoBoxOpen: () => {},
+  infoBoxItems: [],
+  addItemToInfoBox: () => {},
 });
 
 export const InfoProvider = ({ children }) => {
   const [isInfoBoxOpen, setIsInfoBoxOpen] = useState(false);
-  const value = { isInfoBoxOpen, setIsInfoBoxOpen };
-  return <InfoContext.Provider value={value}>{children}</InfoContext.Provider>;
+  const [infoBoxItems, setInfoBoxItems] = useState([]);
+
+  const addItemToInfoBox = (itemToAdd) => {
+    setInfoBoxItems(addInfoBoxItem(infoBoxItems, itemToAdd));
+  };
+
+  const value = {
+    isInfoBoxOpen,
+    setIsInfoBoxOpen,
+    addItemToInfoBox,
+    infoBoxItems,
+  };
+
+  return (
+    <InfoBoxContext.Provider value={value}>{children}</InfoBoxContext.Provider>
+  );
 };
