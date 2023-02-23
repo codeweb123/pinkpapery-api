@@ -1,41 +1,35 @@
 import { createContext, useState } from "react";
 
-const addInfoBoxItem = (
-  infoBoxPetItems,
-  infoBoxLandItems,
-  petItemToAdd,
-  landItemToAdd
-) => {
-  const existingInfoBoxPetItem = infoBoxPetItems.find(
-    (infoBoxPetItem) => infoBoxPetItem.id === petItemToAdd.id
+const addInfoBoxItem = (infoBoxItems, itemToAdd) => {
+  const existingInfoBoxItem = infoBoxItems.find(
+    (infoBoxItem) => infoBoxItem.id === itemToAdd.id
   );
 
-  if (!existingInfoBoxPetItem) {
-    return [{ ...petItemToAdd }];
+  if (!existingInfoBoxItem) {
+    return [{ ...itemToAdd }];
   }
 };
 
 export const InfoBoxContext = createContext({
   isInfoBoxOpen: false,
   setIsInfoBoxOpen: () => {},
-  infoBoxPetItems: [],
-  infoBoxLandItems: [],
+  infoBoxItems: [],
   addItemToInfoBox: () => {},
 });
 
 export const InfoProvider = ({ children }) => {
   const [isInfoBoxOpen, setIsInfoBoxOpen] = useState(false);
-  const [infoBoxPetItems, setInfoBoxPetItems] = useState([]);
+  const [infoBoxItems, setInfoBoxItems] = useState([]);
 
-  const addPetItemToInfoBox = (petItemToAdd) => {
-    setInfoBoxPetItems(addInfoBoxPetItem(infoBoxPetItems, petItemToAdd));
+  const addItemToInfoBox = (itemToAdd) => {
+    setInfoBoxItems(addInfoBoxItem(infoBoxItems, itemToAdd));
   };
 
   const value = {
     isInfoBoxOpen,
     setIsInfoBoxOpen,
-    addPetItemToInfoBox,
-    infoBoxPetItems,
+    addItemToInfoBox,
+    infoBoxItems,
   };
 
   return (
