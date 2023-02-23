@@ -6,6 +6,7 @@ import "./game.styles.scss";
 
 const Game = () => {
   const { infoBoxItems } = useContext(InfoBoxContext);
+
   return (
     <div>
       <ProgressBar />
