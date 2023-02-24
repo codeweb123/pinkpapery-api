@@ -1,6 +1,7 @@
 import "./math-problem-box.styles.scss";
 import Button from "../button/button.component";
-const countdown = document.querySelector(".countdown");
+import { useContext } from "react";
+import { ProblemsContext } from "../../contexts/problems.context";
 
 const MathProblemBox = () => {
   return (
@@ -8,10 +9,10 @@ const MathProblemBox = () => {
       <div className="header">
         <h1>Math Game</h1>
       </div>
-      <div className="card" id="countdown-page">
+      <div className="card" id="countdown-page" hidden>
         <h1 className="countdown">3</h1>
       </div>
-      <div className="card" id="game-page" hidden>
+      <div className="card" id="game-page">
         <div className="item-container">
           <div className="selected-item"></div>
           <div className="item">
