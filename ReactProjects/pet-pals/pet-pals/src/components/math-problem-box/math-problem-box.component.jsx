@@ -1,12 +1,7 @@
 import "./math-problem-box.styles.scss";
 import Button from "../button/button.component";
-import { useContext } from "react";
-import { ProblemsContext } from "../../contexts/problems.context";
 
-const MathProblemBox = ({ problem }) => {
-  const { mathproblem, solution } = problem;
-  const { problems } = useContext(ProblemsContext);
-
+const MathProblemBox = () => {
   return (
     <div className="game-container">
       <div className="header">
@@ -18,7 +13,8 @@ const MathProblemBox = ({ problem }) => {
       <div className="card" id="game-page">
         <div className="item-container">
           <div className="selected-item"></div>
-          <div className="item"></div>
+          <div className="item">1 + 1 = 2</div>
+          <div className="item">1 + 2 = 3</div>
         </div>
         <div className="item-footer">
           <Button className="wrong">Wrong</Button>
