@@ -3,7 +3,10 @@ import Button from "../button/button.component";
 import { useContext } from "react";
 import { ProblemsContext } from "../../contexts/problems.context";
 
-const MathProblemBox = () => {
+const MathProblemBox = ({ problem }) => {
+  const { mathproblem, solution } = problem;
+  const { problems } = useContext(ProblemsContext);
+
   return (
     <div className="game-container">
       <div className="header">
@@ -15,9 +18,7 @@ const MathProblemBox = () => {
       <div className="card" id="game-page">
         <div className="item-container">
           <div className="selected-item"></div>
-          <div className="item">
-            <h1>3 X 3 = 30</h1>
-          </div>
+          <div className="item"></div>
         </div>
         <div className="item-footer">
           <Button className="wrong">Wrong</Button>

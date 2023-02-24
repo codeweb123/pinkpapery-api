@@ -1,5 +1,5 @@
 import { createContext, useState } from "react";
-import PROBLEMS from "../problems-data.json";
+import PROBLEMS from "../math-data.json";
 
 export const ProblemsContext = createContext({
   problems: [],
