@@ -10,13 +10,12 @@ const Game = () => {
   return (
     <div>
       <ProgressBar />
-      <h1>I am the game page</h1>
       <div className="info-box-items">
         {infoBoxItems.map((infoBoxItem) => {
           const { name, imageUrl } = infoBoxItem;
           return (
             <div>
-              <h2>{name}</h2>
+              <h2>I'm your PetPal {name}!</h2>
               <img src={imageUrl} alt={name} />
             </div>
           );

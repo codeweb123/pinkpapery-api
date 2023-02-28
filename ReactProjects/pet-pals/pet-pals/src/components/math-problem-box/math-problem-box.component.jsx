@@ -1,5 +1,6 @@
 import "./math-problem-box.styles.scss";
 import Button from "../button/button.component";
+
 const gamePage = document.getElementById("game-page");
 const scorePage = document.getElementById("score-page");
 const splashPage = document.getElementById("splash-page");
@@ -22,6 +23,7 @@ const playAgainBtn = document.querySelector(".play-again");
 // Equations
 
 let equationsArray = [];
+let questionAmount = 0;
 
 // Game Page
 let firstNumber = 0;
@@ -31,9 +33,7 @@ const wrongFormat = [];
 
 const MathProblemBox = () => {
   // Time
-
   // Scroll
-
   // Create Correct/Incorrect Random Equations
   function createEquations() {
     // Randomly choose how many correct equations there should be
@@ -85,14 +85,43 @@ const MathProblemBox = () => {
   //   itemContainer.appendChild(bottomSpacer);
   // }
 
-  startForm.addEventListener("click", () => {
-    radioContainers.forEach((radioEl) => {
-      radioEl.classList.remove("selected-label");
-      if (radioEl.children[1].checked) {
-        radioEl.classList.add("selected-label");
+  window.onload = function () {
+    function countdownStart() {}
+
+    function showCountdown() {
+      countdownPage.hidden = false;
+      splashPage.hidden = true;
+    }
+
+    function getRadioValue() {
+      let radioValue;
+      radioInputs.forEach((radioInput) => {
+        if (radioInput.checked) {
+          radioValue = radioInput.value;
+        }
+      });
+      return radioValue;
+    }
+
+    function selectQuestionAmount(e) {
+      e.preventDefault();
+      questionAmount = getRadioValue();
+      if (questionAmount) {
+        showCountdown();
       }
+    }
+
+    startForm.addEventListener("click", () => {
+      radioContainers.forEach((radioEl) => {
+        radioEl.classList.remove("selected-label");
+        if (radioEl.children[1].checked) {
+          radioEl.classList.add("selected-label");
+        }
+      });
     });
-  });
+
+    startForm.addEventListener("submit", selectQuestionAmount);
+  };
 
   return (
     <div className="game-container">
@@ -163,18 +192,18 @@ const MathProblemBox = () => {
         </form>
       </div>
 
-      <div className="card" id="countdown-page" hidden>
-        <h1 className="countdown">3</h1>
+      <div className="card" id="countdown-page">
+        <h1 className="countdown"></h1>
       </div>
 
-      <div className="card" id="game-page" hidden>
+      <div className="card" id="game-page">
         <div className="item-container"></div>
         <div className="item-footer">
           <button className="wrong">Wrong</button>
           <button className="right">Right</button>
         </div>
       </div>
-      <div className="card" id="score-page" hidden>
+      <div className="card" id="score-page">
         <div className="score-container">
           <h1 className="title">Your Time</h1>
           <h1 className="final-time">3.4s</h1>
