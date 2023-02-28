@@ -2,72 +2,85 @@ import "./math-problem-box.styles.scss";
 import Button from "../button/button.component";
 
 const MathProblemBox = () => {
-  let questionAmount = 10;
-  let equationsArray = [];
-  let firstNumber = 0;
-  let secondNumber = 0;
-  let equationObject = {};
-  const wrongFormat = [];
-
-  const correctEquations = getRandomInt(questionAmount);
-  const wrongEquations = questionAmount - correctEquations;
-
-  function getRandomInt(max) {
-    return Math.floor(Math.random() * Math.floor(max));
-  }
-
-  for (let i = 0; i < correctEquations; i++) {
-    firstNumber = getRandomInt(9);
-    secondNumber = getRandomInt(9);
-
-    const equationValue = firstNumber * secondNumber;
-    const equation = `${firstNumber} X ${secondNumber} = ${equationValue}`;
-    equationObject = { value: equation, evaluated: "true" };
-    equationsArray.push(equationObject);
-
-    for (let i = 0; i < wrongEquations; i++) {
-      firstNumber = getRandomInt(9);
-      secondNumber = getRandomInt(9);
-      const equationValue = firstNumber * secondNumber;
-      wrongFormat[0] = `${firstNumber} X ${
-        secondNumber + 1
-      } = ${equationValue}`;
-      wrongFormat[1] = `${firstNumber} X ${secondNumber} = ${
-        equationValue - 1
-      }`;
-      wrongFormat[2] = `${
-        firstNumber + 1
-      } X ${secondNumber} = ${equationValue}`;
-      const formatChoice = getRandomInt(3);
-      const equation = wrongFormat[formatChoice];
-      equationObject = { value: equation, evaluated: "false" };
-      equationsArray.push(equationObject);
-    }
-    equationsToDOM();
-  }
-
-  function equationsToDOM() {
-    equationsArray.forEach((equation) => {
-      const item = document.createElement("div");
-      item.classList.add("item");
-      const equationText = document.createElement("h1");
-      equationText.textContent = equation.value;
-      item.appendChild(equationText);
-      itemContainer.appendChild(item);
-    });
-  }
-
   return (
     <div className="game-container">
       <div className="header">
         <h1>Math Game</h1>
       </div>
+      <div className="card" id="splash-page">
+        <form id="start-form">
+          <div className="selection-container">
+            <div className="radio-container">
+              <label for="value-10"> 10 questions </label>
+              <input
+                type="radio"
+                name="questions"
+                value="10"
+                id="value"
+              ></input>
+              <span className="best-score">
+                <span> Best Score </span>
+                <span className="best-score-value">0.0s</span>
+              </span>
+            </div>
+            <div className="radio-container">
+              <label for="value-25"> 25 questions </label>
+              <input
+                type="radio"
+                name="questions"
+                value="25"
+                id="value"
+              ></input>
+              <span className="best-score">
+                <span> Best Score </span>
+                <span className="best-score-value">0.0s</span>
+              </span>
+            </div>
+            <div className="radio-container">
+              <label for="value-50"> 50 questions </label>
+              <input
+                type="radio"
+                name="questions"
+                value="50"
+                id="value"
+              ></input>
+              <span className="best-score">
+                <span> Best Score </span>
+                <span className="best-score-value">0.0s</span>
+              </span>
+            </div>
+            <div className="radio-container">
+              <label for="value-99"> 99 questions </label>
+              <input
+                type="radio"
+                name="questions"
+                value="99"
+                id="value"
+              ></input>
+              <span className="best-score">
+                <span> Best Score </span>
+                <span className="best-score-value">0.0s</span>
+              </span>
+            </div>
+          </div>
+          <div class="selection-footer">
+            <button className="start" type="submit">
+              Start Round!
+            </button>
+          </div>
+        </form>
+      </div>
+
       <div className="card" id="countdown-page" hidden>
         <h1 className="countdown">3</h1>
       </div>
-      <div className="card" id="game-page">
-        <div className="selected-item"></div>
-        <div className="itemContainer"></div>
+
+      <div className="card" id="game-page" hidden>
+        <div className="item-container"></div>
+        <div className="item-footer">
+          <button className="wrong">Wrong</button>
+          <button className="right">Right</button>
+        </div>
       </div>
       <div className="card" id="score-page" hidden>
         <div className="score-container">
