@@ -84,6 +84,16 @@ const MathProblemBox = () => {
   //   bottomSpacer.classList.add('height-500');
   //   itemContainer.appendChild(bottomSpacer);
   // }
+
+  startForm.addEventListener("click", () => {
+    radioContainers.forEach((radioEl) => {
+      radioEl.classList.remove("selected-label");
+      if (radioEl.children[1].checked) {
+        radioEl.classList.add("selected-label");
+      }
+    });
+  });
+
   return (
     <div className="game-container">
       <div className="header">
