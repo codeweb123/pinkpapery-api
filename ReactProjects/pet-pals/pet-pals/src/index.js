@@ -5,7 +5,6 @@ import { UserProvider } from "./contexts/user.context";
 import { PetsProvider } from "./contexts/pets.context";
 import { LandsProvider } from "./contexts/lands.context";
 import { InfoProvider } from "./contexts/info.context";
-import { ProblemsProvider } from "./contexts/problems.context";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter } from "react-router-dom";
 import "./index.scss";
@@ -14,17 +13,15 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <BrowserRouter>
     <React.StrictMode>
-      <ProblemsProvider>
-        <UserProvider>
-          <LandsProvider>
-            <PetsProvider>
-              <InfoProvider>
-                <App />
-              </InfoProvider>
-            </PetsProvider>
-          </LandsProvider>
-        </UserProvider>
-      </ProblemsProvider>
+      <UserProvider>
+        <LandsProvider>
+          <PetsProvider>
+            <InfoProvider>
+              <App />
+            </InfoProvider>
+          </PetsProvider>
+        </LandsProvider>
+      </UserProvider>
     </React.StrictMode>
   </BrowserRouter>
 );
