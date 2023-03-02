@@ -9,7 +9,6 @@ const countdownPage = document.getElementById("countdown-page");
 const startForm = document.getElementById("start-form");
 const radioContainers = document.querySelectorAll(".radio-container");
 const radioInputs = document.querySelectorAll("input");
-const bestScores = document.querySelectorAll(".best-score-value");
 // Countdown Page
 const countdown = document.querySelector(".countdown");
 // Game Page
@@ -21,7 +20,6 @@ const penaltyTimeEl = document.querySelector(".penalty-time");
 const playAgainBtn = document.querySelector(".play-again");
 
 // Equations
-
 let equationsArray = [];
 let questionAmount = 0;
 let playerGuessArray = [];
@@ -31,6 +29,17 @@ let firstNumber = 0;
 let secondNumber = 0;
 let equationObject = {};
 const wrongFormat = [];
+
+// Time
+let timer;
+let timePlayed = 0;
+let baseTime = 0;
+let penaltyTime = 0;
+let finalTime = 0;
+let finalTimeDisplay = "0.0s";
+
+// Scroll
+let valueY = 0;
 
 const MathProblemBox = () => {
   window.onload = function () {
@@ -43,19 +52,9 @@ const MathProblemBox = () => {
       });
     });
   };
-  // Time
-  let timer;
-  let timePlayed = 0;
-  let baseTime = 0;
-  let penaltyTime = 0;
-  let finalTime = 0;
-  let finalTimeDisplay = "0.0s";
-
-  // Scroll
-  let valueY = 0;
 
   function playAgain() {
-    gamePage.addEventListener("click", startTimer);
+    gamePage.addEventListener("click", startTimer());
     scorePage.hidden = true;
     splashPage.hidden = false;
     equationsArray = [];
@@ -84,7 +83,7 @@ const MathProblemBox = () => {
   }
 
   function checkTime() {
-    if (playerGuessArray.length === questionAmount) {
+    if (playerGuessArray.length == questionAmount) {
       clearInterval(timer);
       equationsArray.forEach((equation, index) => {
         if (equation.evaluated === playerGuessArray[index]) {
@@ -249,7 +248,7 @@ const MathProblemBox = () => {
         <form id="start-form">
           <div className="selection-container">
             <div className="radio-container">
-              <label for="value-10"> 10 questions </label>
+              <label htmlFor="value-10"> 10 questions </label>
               <input
                 type="radio"
                 name="questions"
@@ -262,7 +261,7 @@ const MathProblemBox = () => {
               </span>
             </div>
             <div className="radio-container">
-              <label for="value-25"> 25 questions </label>
+              <label htmlFor="value-25"> 25 questions </label>
               <input
                 type="radio"
                 name="questions"
@@ -275,7 +274,7 @@ const MathProblemBox = () => {
               </span>
             </div>
             <div className="radio-container">
-              <label for="value-50"> 50 questions </label>
+              <label htmlFor="value-50"> 50 questions </label>
               <input
                 type="radio"
                 name="questions"
@@ -288,7 +287,7 @@ const MathProblemBox = () => {
               </span>
             </div>
             <div className="radio-container">
-              <label for="value-99"> 99 questions </label>
+              <label htmlFor="value-99"> 99 questions </label>
               <input
                 type="radio"
                 name="questions"
@@ -301,7 +300,7 @@ const MathProblemBox = () => {
               </span>
             </div>
           </div>
-          <div class="selection-footer">
+          <div className="selection-footer">
             <button className="start" type="submit">
               Start Round!
             </button>
@@ -310,29 +309,28 @@ const MathProblemBox = () => {
       </div>
 
       <div className="card" id="countdown-page">
-        <h1 className="countdown"></h1>
+        <div className="countdown"></div>
       </div>
-
       <div className="card" id="game-page">
         <div className="item-container"></div>
         <div className="item-footer">
-          <button className="wrong" onclick="select(false)">
+          <Button className="wrong" onClick={select(false)}>
             Wrong
-          </button>
-          <button className="right" onclick="select(true)">
+          </Button>
+          <Button className="right" onClick={select(true)}>
             Right
-          </button>
+          </Button>
         </div>
       </div>
       <div className="card" id="score-page">
         <div className="score-container">
           <h1 className="title">Your Time</h1>
-          <h1 className="final-time"></h1>
-          <h1 className="base-time"></h1>
-          <h1 className="penalty-time"></h1>
+          <div className="final-time"></div>
+          <div className="base-time"></div>
+          <div className="penalty-time"></div>
         </div>
         <div className="score-footer">
-          <Button className="play-again" onclick="playAgain()" hidden>
+          <Button className="play-again" onClick={playAgain()} hidden>
             Play Again
           </Button>
         </div>
