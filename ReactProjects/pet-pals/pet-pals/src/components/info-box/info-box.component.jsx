@@ -15,11 +15,12 @@ const InfoBox = () => {
 
   return (
     <div className="info-box-container">
+      <h1>My Info:</h1>
       <div className="info-items" />
       {infoBoxItems.map((item) => (
         <InfoBoxItem key={item.id} infoBoxItem={item} />
       ))}
-      <Button onClick={goToGameHandler}>Let's get Learning!</Button>
+      <Button onClick={goToGameHandler}>Go to Game</Button>
     </div>
   );
 };
