@@ -1,13 +1,24 @@
-import { createContext, useState } from "react";
-import PET_DATA from "../pet-data.js";
+import { createContext, useState, useEffect } from "react";
+import {
+  addCollectionAndDocuments,
+  getPetsAndDocuments,
+} from "../utils/firebase/firebase.utils";
 
 export const PetsContext = createContext({
-  pets: [],
+  petsMap: {},
 });
 
 export const PetsProvider = ({ children }) => {
-  const [pets, setPets] = useState([]);
-  const value = { pets };
+  const [petsMap, setPetsMap] = useState({});
+
+  useEffect(() => {
+    const getPetsMap = async () => {
+      const petMap = await getPetsAndDocuments();
+      setPetsMap(petMap);
+    };
+    getPetsMap();
+  }, []);
+  const value = { petsMap };
 
   return <PetsContext.Provider value={value}>{children}</PetsContext.Provider>;
 };
