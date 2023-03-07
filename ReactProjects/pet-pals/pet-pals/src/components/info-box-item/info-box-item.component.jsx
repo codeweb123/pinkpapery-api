@@ -6,9 +6,8 @@ const InfoBoxItem = ({ infoBoxItem }) => {
     <div className="info-box-item-container">
       <img src={imageUrl} alt={name} />
       <div className="item-details">
+        <span className="type">{type.toUpperCase()}:</span>
         <span className="name">{name}</span>
-        <span className="type">{type}</span>
-        <span className="id">{id}</span>
       </div>
     </div>
   );
