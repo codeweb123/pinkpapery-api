@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { InfoBoxContext } from "../../contexts/info.context";
-
 import "./pet-card.styles.scss";
 import Button from "../button/button.component";
 
