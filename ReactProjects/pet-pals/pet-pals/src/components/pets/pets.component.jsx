@@ -4,34 +4,34 @@ const Pets = () => {
   const pets = [
     {
       id: 1,
-      name: "Bear",
-      imageUrl: "https://i.imgur.com/XX6jpgP.png",
+      name: "Alligator",
+      imageUrl: "https://i.imgur.com/gKjvhlt.png",
     },
     {
       id: 2,
-      name: "Bird",
-      imageUrl: "https://i.imgur.com/BYvkLgg.png",
+      name: "Rabbit",
+      imageUrl: "https://i.imgur.com/VDOCpoN.png",
     },
     {
       id: 3,
-      name: "Cat",
-      imageUrl: "https://i.imgur.com/VxhCiq3.png",
+      name: "Leopard",
+      imageUrl: "https://i.imgur.com/T8rRf7Z.png",
     },
     {
       id: 4,
-      name: "Rabbit",
-      imageUrl: "https://i.imgur.com/8Ey3HCv.png",
+      name: "Zebra",
+      imageUrl: "https://i.imgur.com/qknAHaC.png",
     },
     {
       id: 5,
-      name: "Dog",
-      imageUrl: "https://i.imgur.com/ATz4LYP.png",
+      name: "Giraffe",
+      imageUrl: "https://i.imgur.com/nf55Ezu.png",
     },
   ];
 
   return (
     <div>
-      <h2>Petpal Land</h2>
+      <h2>PetPal Land</h2>
       <Login pets={pets} />
     </div>
   );

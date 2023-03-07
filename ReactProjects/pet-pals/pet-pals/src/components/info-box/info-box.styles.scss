@@ -1,20 +1,15 @@
 .info-box-container {
     position: absolute;
     width: 500px;
-    height: 500px;
+    height: 400px;
     display: flex;
     flex-direction: column;
     padding: 20px;
     border: 1px solid black;
-    background-color: white;
+    border-radius: 20px;
+    background-color: rgb(255, 203, 203);
     top: 400px;
-    right: 400px;
     z-index: 5;
-  
-    .empty-message {
-      font-size: 18px;
-      margin: 50px auto;
-    }
   
     .info-items {
       height: 240px;
