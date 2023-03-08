@@ -34,6 +34,7 @@ export default function App() {
     if (!formValid) {
       return;
     }
+
     if (+num1 - +num2 === +difference) {
       setScoresubtract((scoresubtract) => scoresubtract + 1);
     }
@@ -71,11 +72,12 @@ export default function App() {
           </div>
           <br></br>
           <Button type="submit">check</Button>
+          <br></br>
+          <Button type="button" onClick={generateQuestion}>
+            new problem
+          </Button>
         </form>
         <br></br>
-        <Button type="button" onClick={generateQuestion}>
-          start game
-        </Button>
         <h1>score:{score}</h1>
       </div>
       <div className="card2">
@@ -95,11 +97,11 @@ export default function App() {
           </div>
           <br></br>
           <Button type="submit">check</Button>
+          <br></br>
+          <Button type="button" onClick={generateQuestion}>
+            start game
+          </Button>
         </form>
-        <br></br>
-        <Button type="button" onClick={generateQuestion}>
-          start game
-        </Button>
         <h1>score:{scoresubtract}</h1>
       </div>
       <div className="card3">
@@ -119,11 +121,11 @@ export default function App() {
           </div>
           <br></br>
           <Button type="submit">check</Button>
+          <br></br>
+          <Button type="button" onClick={generateQuestion}>
+            start game
+          </Button>
         </form>
-        <br></br>
-        <Button type="button" onClick={generateQuestion}>
-          start game
-        </Button>
         <h1>score:{scoremultiplication}</h1>
       </div>
     </div>

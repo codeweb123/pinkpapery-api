@@ -38,6 +38,18 @@ const LAND_DATA = [
         imageUrl: "https://i.imgur.com/UQUiJ99.jpg",
         type: "land",
       },
+      {
+        id: 7,
+        name: "Autumn",
+        imageUrl: "https://i.imgur.com/EZStIJl.png",
+        type: "land",
+      },
+      {
+        id: 8,
+        name: "Cherry Blossom",
+        imageUrl: "https://i.imgur.com/qmjHvVC.png",
+        type: "land",
+      },
     ],
   },
 ];
