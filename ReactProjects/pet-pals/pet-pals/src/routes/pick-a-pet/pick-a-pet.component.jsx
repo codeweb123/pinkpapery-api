@@ -12,7 +12,7 @@ const PickAPet = () => {
     <Fragment>
       <h1>Pick A Pet!</h1>
       {Object.keys(petsMap).map((title) => (
-        <Fragment>
+        <Fragment key={title}>
           <div className="pets-container">
             {petsMap[title].map((pet) => (
               <PetCard key={pet.id} pet={pet} />

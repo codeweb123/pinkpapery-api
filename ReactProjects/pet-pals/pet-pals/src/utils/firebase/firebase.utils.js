@@ -74,6 +74,19 @@ export const getPetsAndDocuments = async () => {
   return petMap;
 };
 
+export const getLandsAndDocuments = async () => {
+  const collectionRef = collection(db, "lands");
+  const q = query(collectionRef);
+
+  const querySnapshot = await getDocs(q);
+  const landMap = querySnapshot.docs.reduce((acc, docSnapshot) => {
+    const { title, items } = docSnapshot.data();
+    acc[title.toLowerCase()] = items;
+    return acc;
+  }, {});
+  return landMap;
+};
+
 export const createUserDocumentFromAuth = async (
   userAuth,
   additionalInformation = {}

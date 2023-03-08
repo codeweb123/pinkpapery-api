@@ -1,8 +1,5 @@
 import { createContext, useState, useEffect } from "react";
-import {
-  addCollectionAndDocuments,
-  getPetsAndDocuments,
-} from "../utils/firebase/firebase.utils";
+import { getPetsAndDocuments } from "../utils/firebase/firebase.utils";
 
 export const PetsContext = createContext({
   petsMap: {},

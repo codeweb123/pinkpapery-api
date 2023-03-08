@@ -18,7 +18,7 @@ const Navigation = () => {
     <Fragment>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          <img src="logo.png" alt="logo" />
+          <img src="" alt="PetPal Land Logo" />
         </Link>
         <div className="nav-links-container">
           {currentUser ? (

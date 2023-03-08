@@ -6,7 +6,7 @@ const addInfoBoxItem = (infoBoxItems, itemToAdd) => {
   );
 
   if (!existingInfoBoxItem) {
-    return [{ ...itemToAdd }];
+    return [...infoBoxItems, { ...itemToAdd }];
   }
 };
 

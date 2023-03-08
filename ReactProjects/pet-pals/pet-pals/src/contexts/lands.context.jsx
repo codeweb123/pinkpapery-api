@@ -1,13 +1,22 @@
-import { createContext, useState } from "react";
-import LAND_DATA from "../land-data.js";
+import { createContext, useState, useEffect } from "react";
+import { getLandsAndDocuments } from "../utils/firebase/firebase.utils";
 
 export const LandsContext = createContext({
-  lands: [],
+  landsMap: {},
 });
 
 export const LandsProvider = ({ children }) => {
-  const [lands, setLands] = useState([]);
-  const value = { lands };
+  const [landsMap, setLandsMap] = useState({});
+
+  useEffect(() => {
+    const getLandsMap = async () => {
+      const landMap = await getLandsAndDocuments();
+      setLandsMap(landMap);
+    };
+    getLandsMap();
+  }, []);
+
+  const value = { landsMap };
 
   return (
     <LandsContext.Provider value={value}>{children}</LandsContext.Provider>

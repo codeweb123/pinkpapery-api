@@ -8,20 +8,20 @@ const Game = () => {
   const { infoBoxItems } = useContext(InfoBoxContext);
 
   return (
-    <div>
-      <ProgressBar />
+    <div className="i-box-container">
       <div className="info-box-items">
         {infoBoxItems.map((infoBoxItem) => {
           const { name, imageUrl } = infoBoxItem;
           return (
             <div>
-              <h2>I'm your PetPal {name}!</h2>
-              <img src={imageUrl} alt={name} />
+              <img src={imageUrl} alt={name} key={infoBoxItem.id} />
             </div>
           );
         })}
       </div>
-      <Math />
+      <div className="z-index-created-div">
+        <Math className="math-game" />
+      </div>
     </div>
   );
 };
