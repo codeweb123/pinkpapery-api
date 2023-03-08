@@ -31,7 +31,8 @@ const Pets = () => {
 
   return (
     <div>
-      <h2>PetPal Land</h2>
+      <br></br>
+      <br></br>
       <Login pets={pets} />
     </div>
   );

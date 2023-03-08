@@ -1,6 +1,7 @@
 import { Fragment, useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
 import XIcon from "../../components/info-icon/info-icon.component";
+import petpallogo from "../../assets/pet-pal-land.png";
 import InfoBox from "../../components/info-box/info-box.component";
 
 import { UserContext } from "../../contexts/user.context";
@@ -11,18 +12,24 @@ import { signOutUser } from "../../utils/firebase/firebase.utils";
 import "./navigation.styles.scss";
 
 const Navigation = () => {
-  const { currentUser } = useContext(UserContext);
+  const { currentUser, setCurrentUser } = useContext(UserContext);
+
   const { isInfoBoxOpen } = useContext(InfoBoxContext);
+
+  const signOutHandler = async () => {
+    await signOutUser();
+    setCurrentUser(null);
+  };
 
   return (
     <Fragment>
       <div className="navigation">
         <Link className="logo-container" to="/">
-          <img src="" alt="PetPal Land Logo" />
+          <img src={petpallogo} alt="PetPal Land Logo" />
         </Link>
         <div className="nav-links-container">
           {currentUser ? (
-            <span className="nav-link" onClick={signOutUser}>
+            <span className="nav-link" onClick={signOutHandler}>
               {" "}
               Sign Out
             </span>

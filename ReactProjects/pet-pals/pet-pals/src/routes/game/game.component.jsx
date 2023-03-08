@@ -1,6 +1,5 @@
 import { useContext } from "react";
 import { InfoBoxContext } from "../../contexts/info.context";
-import ProgressBar from "../../components/progress-bar/progress-bar.component";
 import Math from "../../components/math/math.component";
 import "./game.styles.scss";
 
